@@ -88,7 +88,7 @@ Sends Information Over Socket To:
 
 ---
 
-**LobbyOnlinePlayers** - Link - ```LobbyOnlinePlayers.java```
+**LobbyOnlinePlayers** - [Link](https://github.com/bmmurthum/BlackJack-p2p/blob/master/src/LobbyOnlinePlayers.java) - ```LobbyOnlinePlayers.java```
 
 This class allows for one single object that contains all the information on the central-server that each threaded ```LobbyHandler.java``` can call on for unified information. It has methods to (1) validate a username as unique, (2) to return the list of current hosting-users, (3) to display on the central-server terminal the current connected users, and (4) to manage adding and removing users from it's various lists dynamically.
 
