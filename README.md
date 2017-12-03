@@ -92,6 +92,6 @@ Sends Information Over Socket To:
 
 This class allows for one single object that contains all the information on the central-server that each threaded ```LobbyHandler.java``` can call on for unified information. It has methods to (1) validate a username as unique, (2) to return the list of current hosting-users, (3) to display on the central-server terminal the current connected users, and (4) to manage adding and removing users from it's various lists dynamically.
 
-The a pointer to the object "playerList" of this type, within ```LobbyServer.java```, is shared to each ```LobbyHandler.java``` at the handler's construction. There is one "playerList" that exists, it is created and exists within ```Lobbyserver.java```. 
+The a pointer to the object "playerList" of this type, within ```LobbyServer.java```, is shared to each ```LobbyHandler.java``` at the handler's construction. There is one "playerList" that exists, it is created and exists within ```LobbyServer.java```. 
 
 
