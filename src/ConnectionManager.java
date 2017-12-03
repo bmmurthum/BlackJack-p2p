@@ -190,13 +190,13 @@ public class ConnectionManager {
      * Sets up the client to be logged as hosting a game.
      * @return INT - integer represents confirmation/errors
      */
-    public int initiateHostingGame() {
+    public int initiateHostingGame(String portNumber) {
 
         /* TODO - Open a welcome port for another player */
         /* TODO - Establish a flexible socket-port being opened here. */
-
+    	
         /* TODO - This temporarily holds a sample "dealerWelcomePort" */
-        outToServerControl.println("HOSTGAME" + " " + "1236");
+        outToServerControl.println("HOSTGAME" + " " + portNumber);
         outToServerControl.flush();
 
         /* Wait for confirmation. To disallow over 10 connects, or errors. */

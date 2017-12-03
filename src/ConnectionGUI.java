@@ -529,13 +529,14 @@ public class ConnectionGUI {
         /** Listener for "Host Game" */
         btnHostGame.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent e) {
+            	
+            	String portToHost = findAvailablePort();
                 /* Initiate our player as a host to another player */
-                int result = connManager.initiateHostingGame();
+                int result = connManager.initiateHostingGame(portToHost);
                 if (result == 1) {
                     hostingGame = true;
-
+                    
                     /* TODO - This could initiate a window change */
-
                     btnHostGame.setEnabled(false);
 
                 } else {
@@ -803,6 +804,31 @@ public class ConnectionGUI {
         Timer timer = new Timer(200, timedPerformer);
         timer.setRepeats(true);
         timer.start();
-
+        }
+    
+    /**
+     * Function that will find a port that is available 
+     * 
+     * @return int Available port
+     */
+    private String findAvailablePort() {
+    	
+    	String defaultPort = "1234";
+    	boolean found = false;
+    	
+    	while(!found) {
+    		if(portsOfHostPlayers.contains(defaultPort)) {
+    			int curr = Integer.parseInt(defaultPort);
+    			curr++;
+    			defaultPort = String.valueOf(curr);
+    		} 
+    		else {
+    			found = true;
+    		}
+    	}
+    	
+    	String portToSend = defaultPort;
+    	
+    	return portToSend;
     }
 }
